@@ -1,0 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.python*
+
+# Virtual environments
+.venv
+.vscode
+
+# rust bin
+/file_saver_rust/target
+/file_saver_rust/Cargo.lock

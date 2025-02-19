@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/rust
+{
+	"name": "Rust",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
+	"features": {
+		"ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
+		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {}
+	},
+
+	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
+	// "mounts": [
+	// 	{
+	// 		"source": "$(pwd)/uploads",
+	// 		"target": "/app/uploads",
+	// 		"type": "volume"
+	// 	}
+	// ],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+				"python.defaultInterpreterPath": "/usr/bin/python"
+			},
+			// installs useful extensions
+			"extensions": [
+				"ms-python.python",
+				"ms-python.debugpy",
+				"mohsen1.prettify-json",
+				"rust-lang.rust-analyzer"
+			]
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "root",
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash post_create.sh",
+
+	// Use 'postStartCommand' to run a command each time the container starts successfully.
+	"postStartCommand": "python -c 'import file_saver_rust; print('Rust library loaded successfully!')'"
+}

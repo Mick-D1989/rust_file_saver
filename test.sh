@@ -1,0 +1,3 @@
+echo "Testing Folder Upload" && \
+curl -X POST -F "folder_path=c:\Users\micha\OneDrive\Desktop\photos_and_videos\videos" http://127.0.0.1:5000/upload && \ 
+curl -X POST -F "files=@c:\Users\micha\OneDrive\Desktop\photos_and_videos\FakeHarley_AMTh4ufc7g\823394_10151338239442833_938507562_o_10151338239442833.jpg" -F "files=@c:\Users\micha\OneDrive\Desktop\photos_and_videos\FakeHarley_AMTh4ufc7g\859328_10151338240002833_861398768_o_10151338240002833.jpg" http://127.0.0.1:5000/upload
