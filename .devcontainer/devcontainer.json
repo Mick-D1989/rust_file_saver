@@ -50,5 +50,5 @@
 	"postCreateCommand": "uv sync",
 
 	// Use 'postStartCommand' to run a command each time the container starts successfully.
-	"postStartCommand": "python -c 'import file_saver_rust; print('Rust library loaded successfully!')'"
+	// "postStartCommand": "python -c 'import file_saver_rust; print('Rust library loaded successfully!')'"
 }

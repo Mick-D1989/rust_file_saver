@@ -1,2 +1,0 @@
-cd file_saver_rust
-maturin develop
