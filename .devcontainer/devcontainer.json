@@ -30,7 +30,8 @@
 		"vscode": {
 			// Set *default* container specific settings.json values on container create.
 			"settings": {
-				"python.defaultInterpreterPath": "/usr/bin/python"
+				"python.defaultInterpreterPath": "./.venv/bin/python3.9",
+				"python.terminal.activateEnvironment": true
 			},
 			// installs useful extensions
 			"extensions": [
@@ -45,8 +46,8 @@
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	"remoteUser": "root",
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash post_create.sh",
+	// // // Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "uv sync",
 
 	// Use 'postStartCommand' to run a command each time the container starts successfully.
 	"postStartCommand": "python -c 'import file_saver_rust; print('Rust library loaded successfully!')'"

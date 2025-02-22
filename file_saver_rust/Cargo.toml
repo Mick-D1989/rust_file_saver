@@ -1,6 +1,7 @@
 [package]
 name = "file_saver_rust"
 version = "0.1.0"
+authors = ["Durante"]
 edition = "2021"
 
 [dependencies]
@@ -11,6 +12,7 @@ futures = { version = "0.3" }
 [lib]
 name = "file_saver_rust"
 crate-type = ["cdylib"]
+path = "src/lib.rs"
 
 [package.metadata.maturin]
 bindings = "pyo3"
