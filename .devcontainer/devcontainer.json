@@ -22,7 +22,7 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	// "forwardPorts": ["5000:5000"],
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -44,10 +44,10 @@
 	},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "root",
+	"remoteUser": "root"
 
 	// // // Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "uv sync",
+	// "postCreateCommand": "uv sync"
 
 	// Use 'postStartCommand' to run a command each time the container starts successfully.
 	// "postStartCommand": "python -c 'import file_saver_rust; print('Rust library loaded successfully!')'"
