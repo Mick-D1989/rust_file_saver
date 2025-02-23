@@ -25,13 +25,14 @@ async def upload_chunk(
     fileSize: int = Form(...)
 ):
     file_path = os.path.join(UPLOAD_DIR, fileName)
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     # Read the uploaded chunk
     chunk_data = await chunkData.read()
 
     # Open the file in binary mode and write the chunk at the correct position
-    # with open(file_path, "r+b" if os.path.exists(file_path) else "wb") as f:
-    with open(file_path, "wb") as f:
+    with open(file_path, "r+b" if os.path.exists(file_path) else "wb") as f:
+    # with open(file_path, "r+b") as f:
         f.seek(offset)
         f.write(chunk_data)
 
