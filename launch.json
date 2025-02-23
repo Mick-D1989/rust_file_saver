@@ -1,0 +1,51 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Server",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "fastapi", // Replace with your FastAPI app entry point
+            "args": [
+                "run",
+                "app/app.py",
+                "--host", "127.0.0.1",
+                "--port", "8000",
+                "--reload"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app",
+                "KILLONSTOP": "true"
+            },
+            "console": "internalConsole",
+            "jinja": true,
+            "autoStartBrowser": false, // set to false so that the static stuff can be debugged through the "Client" configuration.
+            "presentation": {
+                "hidden": true,
+            },
+        },
+        {
+            "name": "Client",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8000", // The URL where app is serving static files
+            "webRoot": "${workspaceFolder}/app", // Where the app gets run from
+            "sourceMapPathOverrides": {
+                "webpack:///src/*": "${workspaceFolder}/app/static/*" // Where the static files live (css/js/etc)
+            },
+            "preLaunchTask": "Sleepdelay",
+            "presentation": {
+                "hidden": true,
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run App",
+            "configurations": [
+                "Server",
+                "Client"
+            ]
+        }
+    ]
+}
