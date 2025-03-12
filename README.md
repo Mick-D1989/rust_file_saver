@@ -6,6 +6,10 @@ https://stackoverflow.com/questions/3590058/does-html5-allow-drag-drop-upload-of
 
 https://codepen.io/xieliming/pen/QWmvxwV
 
+NGINX and Docker Resources
+
+https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/
+
 Certificates and OAuth Resources
 
 https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask-in-2023
@@ -14,7 +18,3 @@ https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask-in-2023
 https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
 https://blog.miguelgrinberg.com/post/using-free-let-s-encrypt-ssl-certificates-in-2025
 
-
-NGINX and Docker Resources
-
-https://testdriven.io/blog/dockerizing-flask-with-postgres-gunicorn-and-nginx/

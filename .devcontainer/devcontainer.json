@@ -38,7 +38,9 @@
 				"ms-python.python",
 				"ms-python.debugpy",
 				"mohsen1.prettify-json",
-				"rust-lang.rust-analyzer"
+				"rust-lang.rust-analyzer",
+				"gruntfuggly.todo-tree",
+				"vadimcn.vscode-lldb"
 			]
 		}
 	},
