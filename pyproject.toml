@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools", "setuptools-rust"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -13,7 +13,7 @@ authors = [
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "fastapi[standard]>=0.115.8",
+    "flask==2.3.2",
     "jinja2>=3.1.5",
     "uvicorn>=0.34.0",
 ]

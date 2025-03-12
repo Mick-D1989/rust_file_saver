@@ -1,0 +1,77 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Server FastAPI",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "fastapi", // Replace with your FastAPI app entry point
+            "args": [
+                "run",
+                "app/app.py",
+                "--host", "127.0.0.1",
+                "--port", "8000",
+                "--reload"
+            ],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/app",
+                "KILLONSTOP": "true"
+            },
+            "console": "internalConsole",
+            "jinja": true,
+            "autoStartBrowser": false, // set to false so that the static stuff can be debugged through the "Client" configuration.
+            "presentation": {
+                "hidden": true,
+            },
+        },
+        {
+            "name": "Server Flask",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "flask", // Use 'flask' module to run the Flask application
+            "args": [
+                "--app", "app/app.py",
+                "run",
+                "--host", "127.0.0.1",
+                "--port", "8000",
+                "--reload"
+            ],
+            "env": {
+                "FLASK_APP": "app/app.py", // Set the FLASK_APP environment variable
+                "FLASK_ENV": "development", // Set to development for debugging
+                // "PYTHONPATH": "${workspaceFolder}/app"
+            },
+            "console": "integratedTerminal", // Use integrated terminal for output
+            "jinja": true,
+            "autoStartBrowser": false, // set to false so that the static stuff can be debugged through the "Client" configuration.
+            "presentation": {
+                "hidden": true,
+            },
+        },
+        {
+            "name": "Client",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://127.0.0.1:8000", // The URL where app is serving static files
+            "webRoot": "${workspaceFolder}/src/server", // Where the app gets run from
+            "preLaunchTask": "Sleepdelay"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run FastAPI",
+            "configurations": [
+                "Server FastAPI",
+                "Client"
+            ]
+        },
+        {
+            "name": "Run Flask",
+            "configurations": [
+                "Server Flask",
+                "Client"
+            ]
+        }
+    ]
+}
