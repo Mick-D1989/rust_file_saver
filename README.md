@@ -18,3 +18,6 @@ https://blog.miguelgrinberg.com/post/oauth-authentication-with-flask-in-2023
 https://blog.miguelgrinberg.com/post/running-your-flask-application-over-https
 https://blog.miguelgrinberg.com/post/using-free-let-s-encrypt-ssl-certificates-in-2025
 
+FLASK MEGA TUTORIAL 
+
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world

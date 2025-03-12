@@ -30,17 +30,18 @@
             "request": "launch",
             "module": "flask", // Use 'flask' module to run the Flask application
             "args": [
-                "--app", "app/app.py",
+                // "--app", "app/app.py",
                 "run",
                 "--host", "127.0.0.1",
                 "--port", "8000",
                 "--reload"
             ],
-            "env": {
-                "FLASK_APP": "app/app.py", // Set the FLASK_APP environment variable
-                "FLASK_ENV": "development", // Set to development for debugging
-                // "PYTHONPATH": "${workspaceFolder}/app"
-            },
+            "envFile": "${workspaceFolder}/.flaskenv",
+            // "env": {
+            //     "FLASK_APP": "app/app.py", // Set the FLASK_APP environment variable
+            //     "FLASK_ENV": "development", // Set to development for debugging
+            //     // "PYTHONPATH": "${workspaceFolder}/app"
+            // },
             "console": "integratedTerminal", // Use integrated terminal for output
             "jinja": true,
             "autoStartBrowser": false, // set to false so that the static stuff can be debugged through the "Client" configuration.
