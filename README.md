@@ -21,3 +21,9 @@ https://blog.miguelgrinberg.com/post/using-free-let-s-encrypt-ssl-certificates-i
 FLASK MEGA TUTORIAL 
 
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
+
+PODMAN IN WSL
+https://podman-desktop.io/docs/podman/accessing-podman-from-another-wsl-instance
+
+https://code.visualstudio.com/blogs/2020/07/01/containers-wsl
