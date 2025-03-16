@@ -27,3 +27,6 @@ PODMAN IN WSL
 https://podman-desktop.io/docs/podman/accessing-podman-from-another-wsl-instance
 
 https://code.visualstudio.com/blogs/2020/07/01/containers-wsl
+
+ANOTHER HANDY LAYOUT REPO
+https://github.com/Mick-D1989/docker-flask-example

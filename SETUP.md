@@ -66,9 +66,9 @@ add local to path;
 export PATH="$PATH:/usr/local/bin"
 ```
 
-and setup an alias for podman;
+rename the binary to `podman` so compose works later on;
 ```
-echo "alias podman='podman-remote-static-linux_amd64'" >> ~/.bash_aliases
+sudo mv /usr/local/bin/podman-remote-static-linux_amd64 /usr/local/bin/podman
 ```
 
 add the rootless connection;
@@ -176,6 +176,26 @@ podman machine set --rootful=false
 podman system connection add --default podman-machine-default-user unix:///mnt/wsl/podman-sockets/podman-machine-default/podman-user.sock
 ```
 
+Lastly, Install podman-compose;
+```
+sudo apt update && sudo apt upgrade -y
+```
+```
+sudo apt install python-pip && pip upgrade pip
+```
+```
+pip3 install https://github.com/containers/podman-compose/archive/main.tar.gz --break-system-packages
+```
+Move the file to the same spot we put podman before;
+```
+sudo cp /home/<WSL-USERNAME>/.local/bin/podman-compose /usr/local/bin/
+```
+
+Check it's using the right version, if it's not, it may have installed an earlier verison of podman with it
+you can probably remove it with;
+```
+sudo apt remove podman
+```
 
 4) Set-up CDI config in podman machine;
 
